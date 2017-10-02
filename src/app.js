@@ -7,7 +7,6 @@ export function App(sources) {
     .select('#myBtn')
     .events('click')
     .mapTo(true) // Open modal
-    .debug('open')
   const closeModal$ = xs
     .merge(
       // Click outside modal
@@ -17,7 +16,6 @@ export function App(sources) {
     )
     .mapTo(false) // Close modal
     .compose(debounce(1)) // Avoid duplicates
-    .debug('close')
   const modalState$ = xs.merge(openModal$, closeModal$).startWith(false) // Start closed
 
   const modalVtree$ = modalState$.map(visible =>
