@@ -6,7 +6,7 @@ const main = App
 
 const drivers = {
   DOM: makeDOMDriver('#app'),
-  Modal: makeDOMDriver('#modal')
+  Modal: makeDOMDriver('#modal') // This is our "portal"
 }
 
 run(main, drivers)
